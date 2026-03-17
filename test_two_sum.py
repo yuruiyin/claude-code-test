@@ -29,6 +29,15 @@ class TestTwoSum(unittest.TestCase):
         self.assertEqual(add_two_numbers(3.5, 2.5), 6.0)
         self.assertEqual(add_two_numbers(-1.5, 2.5), 1.0)
 
+    def test_invalid_input(self):
+        """测试非数字类型输入"""
+        with self.assertRaises(TypeError):
+            add_two_numbers("3", 5)
+        with self.assertRaises(TypeError):
+            add_two_numbers(3, "5")
+        with self.assertRaises(TypeError):
+            add_two_numbers(None, 5)
+
 
 if __name__ == "__main__":
     unittest.main()
